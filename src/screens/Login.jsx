@@ -4,6 +4,8 @@ import { auth } from '../config/firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
+  console.log('🔐 Componente Login renderizado!');
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);

@@ -71,15 +71,12 @@ const TransactionModal = ({ onClose, onSave }) => {
   return (
     <div
       onClick={onClose}
-      className="absolute inset-0 bg-[rgba(31,18,12,0.45)] backdrop-blur-sm z-[100] animate-[fadeIn_0.2s_ease_both] flex items-end"
+      className="fixed inset-0 bg-[rgba(31,18,12,0.45)] backdrop-blur-sm z-[200] animate-[fadeIn_0.2s_ease_both] flex items-center justify-center p-4"
     >
       <div
         onClick={stopPropagation}
-        className="w-full bg-neutral-50 rounded-t-[30px] px-5 pt-2.5 pb-6 animate-[sheetUp_0.34s_cubic-bezier(0.2,0.8,0.25,1)_both] max-h-[96%] overflow-y-auto"
+        className="w-full max-w-md bg-white rounded-[24px] px-6 py-5 animate-[fadeIn_0.3s_ease_both] max-h-[90vh] overflow-y-auto shadow-[0_24px_60px_-12px_rgba(0,0,0,0.4)]"
       >
-        {/* Handle */}
-        <div className="w-10 h-1.5 rounded bg-[#ddd3cc] mx-auto mb-3.5" />
-
         {/* Header */}
         <div className="flex items-center justify-between mb-1.5">
           <button onClick={onClose} className="text-sm font-bold text-neutral-600">

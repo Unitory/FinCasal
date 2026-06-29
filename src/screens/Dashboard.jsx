@@ -1,29 +1,21 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import BottomNav from '../components/BottomNav';
-import TransactionModal from '../components/TransactionModal';
 
 const Dashboard = () => {
-  const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
 
   return (
-    <>
-      <div className="absolute inset-0 overflow-y-auto animate-[screenIn_0.32s_ease_both] px-5 pt-[22px] pb-[120px]">
+    <div className="min-h-screen p-8 max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex items-center justify-between">
-          <div>
-            <div className="text-[13px] text-neutral-600 font-semibold">Junho 2026</div>
-            <div className="text-[21px] font-extrabold text-neutral-800 tracking-tight">Ana & Léo</div>
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-2">
+            <h1 className="text-3xl font-extrabold text-neutral-800">Início</h1>
+            <select className="px-4 py-2 rounded-xl border border-neutral-200 bg-white text-sm font-semibold text-neutral-700">
+              <option>Junho 2026</option>
+              <option>Maio 2026</option>
+              <option>Abril 2026</option>
+            </select>
           </div>
-          <div className="flex">
-            <div className="w-[38px] h-[38px] rounded-full bg-[#fde0d6] border-2 border-white flex items-center justify-center font-extrabold text-sm text-primary-dark shadow-card-sm">
-              A
-            </div>
-            <div className="w-[38px] h-[38px] rounded-full bg-[#fdebc7] border-2 border-white flex items-center justify-center font-extrabold text-sm text-accent-yellow -ml-3 shadow-card-sm">
-              L
-            </div>
-          </div>
+          <p className="text-neutral-500">Olá, Ana & Léo 👋</p>
         </div>
 
         {/* Balance Card */}
@@ -131,13 +123,6 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-
-      {/* Bottom Navigation */}
-      <BottomNav onAddClick={() => setModalOpen(true)} />
-
-      {/* Transaction Modal */}
-      {modalOpen && <TransactionModal onClose={() => setModalOpen(false)} />}
-    </>
   );
 };
 

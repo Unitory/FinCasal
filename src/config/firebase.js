@@ -3,7 +3,11 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 // Firebase configuration
-// TODO: Replace with your Firebase project credentials
+console.log('🔥 Carregando Firebase...');
+console.log('API Key:', import.meta.env.VITE_FIREBASE_API_KEY ? '✅ Configurada' : '❌ Faltando');
+console.log('Auth Domain:', import.meta.env.VITE_FIREBASE_AUTH_DOMAIN ? '✅ Configurada' : '❌ Faltando');
+console.log('Project ID:', import.meta.env.VITE_FIREBASE_PROJECT_ID ? '✅ Configurada' : '❌ Faltando');
+
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "YOUR_API_KEY",
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "YOUR_AUTH_DOMAIN",
@@ -14,7 +18,14 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+let app;
+try {
+  app = initializeApp(firebaseConfig);
+  console.log('✅ Firebase inicializado com sucesso!');
+} catch (error) {
+  console.error('❌ Erro ao inicializar Firebase:', error);
+  throw error;
+}
 
 // Initialize services
 export const auth = getAuth(app);

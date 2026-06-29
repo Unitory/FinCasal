@@ -1,4 +1,6 @@
 const MobileFrame = ({ children }) => {
+  console.log('📱 MobileFrame renderizado!');
+
   return (
     <div className="relative w-[392px] h-[844px] rounded-[46px] bg-neutral-50 overflow-hidden shadow-[0_40px_90px_-30px_rgba(120,40,20,0.45),0_0_0_1px_rgba(0,0,0,0.04)]">
       {/* Status Bar */}

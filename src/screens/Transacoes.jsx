@@ -1,13 +1,6 @@
-import { useState } from 'react';
-import BottomNav from '../components/BottomNav';
-import TransactionModal from '../components/TransactionModal';
-
 const Transacoes = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
-    <>
-      <div className="absolute inset-0 overflow-y-auto animate-[screenIn_0.32s_ease_both] px-5 pt-[22px] pb-[120px]">
+    <div className="min-h-screen p-8 max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div className="text-[21px] font-extrabold text-neutral-800 tracking-tight">Transações</div>
@@ -91,14 +84,9 @@ const Transacoes = () => {
         </div>
 
         <div className="text-center text-xs text-neutral-300 mt-4 font-medium">
-          Toque num item para editar ou excluir
+          Clique num item para editar ou excluir
         </div>
-      </div>
-
-      <BottomNav onAddClick={() => setModalOpen(true)} />
-
-      {modalOpen && <TransactionModal onClose={() => setModalOpen(false)} />}
-    </>
+    </div>
   );
 };
 
